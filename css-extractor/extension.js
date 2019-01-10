@@ -4,9 +4,8 @@ const {parse,stringify} = require("himalaya");
 const scssfmt = require('scssfmt')
 
 function activate(context) {
-    var outputChannel;
     var selection;
-    outputChannel = vscode.window.createOutputChannel("css-extractor");
+    var outputChannel = vscode.window.createOutputChannel("css-extractor");
     function showMessage (message) {
         outputChannel.appendLine(message);
         outputChannel.show(true);

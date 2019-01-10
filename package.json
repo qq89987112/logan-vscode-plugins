@@ -22,11 +22,11 @@
     "commands": [
       {
         "command": "Scss2wxss.compileAll",
-        "title": "Compile all SCSS/SASS files to wxss"
+        "title": "compileScss"
       },
       {
         "command": "css-extractor.extract",
-        "title": "html2scss"
+        "title": "extractCss"
       }
     ],
     "configuration": {
@@ -49,9 +49,11 @@
     "@types/mocha": "^2.2.32",
     "@types/node": "^6.0.40",
     "autoprefixer": "^9.1.3",
+    "himalaya": "^1.1.0",
     "mocha": "^2.3.3",
     "postcss": "^7.0.2",
     "precss": "^3.1.2",
+    "scssfmt": "^1.0.7",
     "vscode": "^1.1.21"
   }
 }

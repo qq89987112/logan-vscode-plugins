@@ -7,10 +7,7 @@ const precss = require('precss')
 
 var CompileSassExtension = function() {
 
-
-    var outputChannel;
-    outputChannel = vscode.window.createOutputChannel("Scss2wxss");
-
+    var outputChannel = vscode.window.createOutputChannel("postcss-compiler");
     function showErrorMessage (message) {
         outputChannel.appendLine(message);
         outputChannel.show(true);
@@ -35,12 +32,11 @@ var CompileSassExtension = function() {
 
     return {
         OnSave: function(document) {
-            outputChannel.appendLine('Scss2wxss compiling...');
-            outputChannel.show(false);
             // 获取配置相关属性
             var configuration = vscode.workspace.getConfiguration('Scss2wxss');
             const fileName = document.fileName.toLowerCase();
             if (configuration.compileAfterSave && (fileName.endsWith('.css') || fileName.endsWith('.scss') || fileName.endsWith('.sass'))) {
+                showErrorMessage('Scss2wxss compiling...');
                 compileFile(document.fileName);
             }
         },

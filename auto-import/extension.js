@@ -3,7 +3,6 @@ const pathModule = require('path');
 
 function activate(context) {
     
-    // 在编辑器的输出窗口内输出内容,可以这么写:
     var outputChannel = vscode.window.createOutputChannel("auto-import");
     function showMessage (message) {
         outputChannel.appendLine(message);
@@ -27,9 +26,7 @@ function activate(context) {
                     if(name.startsWith(wordToComplete)){
                         const dirRelative = pathModule.relative(pathModule.dirname(document.fileName),pathModule.dirname(file.fsPath)) || '';
                         const tempRelativeArr = pathModule.join(dirRelative,name).split(pathModule.sep);
-                        if(tempRelativeArr.length == 1){
-                            tempRelativeArr.unshift('.');
-                        }
+                        tempRelativeArr.unshift('.');
                         const insertText = tempRelativeArr.join("/");
                         ret.push({
                             label: name,
