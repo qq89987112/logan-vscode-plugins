@@ -1,0 +1,57 @@
+{
+  "name": "logan-vscode-plugins",
+  "displayName": "logan-vscode-plugins",
+  "description": "logan-vscode-plugins",
+  "version": "0.0.1",
+  "publisher": "蔡荣庚",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qq89987112/logan-vscode-plugins"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "Scss2wxss.compileAll",
+        "title": "Compile all SCSS/SASS files to wxss"
+      },
+      {
+        "command": "css-extractor.extract",
+        "title": "html2scss"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Scss2wxss 配置",
+      "properties": {
+        "Scss2wxss.compileAfterSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "保存后自动编译"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "dependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.40",
+    "autoprefixer": "^9.1.3",
+    "mocha": "^2.3.3",
+    "postcss": "^7.0.2",
+    "precss": "^3.1.2",
+    "vscode": "^1.1.21"
+  }
+}
