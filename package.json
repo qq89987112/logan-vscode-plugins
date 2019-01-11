@@ -3,7 +3,7 @@
   "displayName": "logan-vscode-plugins",
   "description": "logan-vscode-plugins",
   "version": "0.0.1",
-  "publisher": "蔡荣庚",
+  "publisher": "logan",
   "engines": {
     "vscode": "^1.11.0"
   },
